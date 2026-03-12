@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #0d0d0d;
+  color: #e8e8e8;
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track { background: #0d0d0d; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+
+.cm-editor {
+  height: 100%;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 14px !important;
+}
+
+.cm-editor.cm-focused { outline: none !important; }
+
+.cm-scroller { overflow: auto; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: #00ff88; }
+  50% { border-color: #00cc6a88; }
+}
+
+.animate-fade-in { animation: fadeIn 0.2s ease; }
+
+.file-tab {
+  transition: all 0.15s ease;
+}
+.file-tab:hover { background: #1e1e1e; }
+.file-tab.active { background: #1a2e22; border-bottom: 2px solid #00ff88; }
+
+.btn-primary {
+  @apply px-4 py-2 bg-accent text-black font-semibold rounded text-sm;
+  transition: all 0.15s ease;
+}
+.btn-primary:hover { @apply bg-accent-dim; transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+
+.btn-ghost {
+  @apply px-3 py-1.5 text-muted text-sm rounded;
+  transition: all 0.15s ease;
+}
+.btn-ghost:hover { @apply text-text bg-surface; }
+
+.input-field {
+  @apply bg-surface border border-border rounded px-3 py-2 text-text text-sm font-mono;
+  transition: border-color 0.15s ease;
+  outline: none;
+}
+.input-field:focus { border-color: #00ff88; }
+
+.toast {
+  animation: fadeIn 0.2s ease;
+}
